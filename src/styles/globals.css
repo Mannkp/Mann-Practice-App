@@ -18,16 +18,39 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  background-color: white;
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+h1 {
+  @apply text-7xl font-extrabold;
+}
+h2 {
+  @apply text-5xl font-bold;
+}
+h3 {
+  @apply text-3xl font-bold;
+}
+h4 {
+  @apply text-2xl font-bold;
+}
+h5 {
+  @apply text-xl font-bold;
+}
+h6 {
+  @apply text-lg font-bold;
+}
+p {
+  @apply text-base;
 }
