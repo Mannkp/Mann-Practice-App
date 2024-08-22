@@ -1,36 +1,29 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import { Inter } from "next/font/google";
-import Layout from "@/Layout";
+import Blog from "@/components/Blog/Blog";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home({ blogs }) {
   return (
-    <Layout>
+    <>
+      <Head>
+        <title>Hunting Coder</title>
+        <meta name="description" content="Mann's Practice Next.js App" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       <main className="bg-white container mx-auto my-14">
-        <Head>
-          <title>Hunting Coder</title>
-          <meta name="description" content="Mann's Practice Next.js App" />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <div className="blogs space-y-8 w-max mx-auto">
-          <h2>Popular Blogs</h2>
-          <div className="blogItem">
-            <h3>How to learn JavaScript in 2022?</h3>
-            <p>JavaScript is the language used to design logic for the web</p>
-          </div>
-          <div className="blogItem">
-            <h3>How to learn JavaScript in 2022?</h3>
-            <p>JavaScript is the language used to design logic for the web</p>
-          </div>
-          <div className="blogItem">
-            <h3>How to learn JavaScript in 2022?</h3>
-            <p>JavaScript is the language used to design logic for the web</p>
+        <div className="blogs w-max mx-auto">
+          <h2 className="text-center my-12">Popular Blogs</h2>
+          <div className="blog-container space-y-8">
+            <Blog limit={4} data={blogs} />
           </div>
         </div>
       </main>
-    </Layout>
+    </>
     // <main
     //   className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     // >
@@ -141,4 +134,13 @@ export default function Home() {
     //   </div>
     // </main>
   );
+}
+
+export async function getStaticProps() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const blogs = await res.json();
+
+  return {
+    props: { blogs },
+  };
 }
