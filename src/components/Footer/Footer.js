@@ -5,7 +5,7 @@ import logo from "../../../public/images/Manns_Blogs_Logo_80px.png";
 const Footer = () => {
   return (
     <>
-      <div className="w-full h-40 bg-blue-900 sticky top-0 mt-28">
+      <div className="w-full h-40 bg-blue-900 relative bottom-0 mt-28">
         <nav className="container mx-auto flex justify-between items-center h-full py-6">
           <Image
             src={logo}

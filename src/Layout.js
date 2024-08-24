@@ -3,12 +3,10 @@ import Footer from "./components/Footer/Footer";
 const Layout = ({ children }) => {
   return (
     <>
-      <header>
+      <header className="w-full sticky top-0">
         <NavBar />
       </header>
-      <main>
-        <div>{children}</div>
-      </main>
+      <main className="container min-h-[65vh] mx-auto">{children}</main>
       <footer>
         <Footer />
       </footer>
