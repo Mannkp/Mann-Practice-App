@@ -7,6 +7,7 @@ const NavBar = () => {
   let subMenuMainData = [
     {
       title: "Home",
+      linkTo: "/",
       subCategory: [
         {
           title: "Home Item1 →",
@@ -52,6 +53,7 @@ const NavBar = () => {
     },
     {
       title: "About Us",
+      linkTo: "/about",
       subCategory: [
         {
           title: "About Us Item1 →",
@@ -97,6 +99,7 @@ const NavBar = () => {
     },
     {
       title: "Contact Us",
+      linkTo: "/contact",
       subCategory: [
         {
           title: "Contact Us Item1 →",
@@ -142,6 +145,7 @@ const NavBar = () => {
     },
     {
       title: "Blogs",
+      linkTo: "/blogs",
       subCategory: [
         {
           title: "Blogs Item1 →",
@@ -207,7 +211,7 @@ const NavBar = () => {
                   className="group transition-all duration-300 px-4 py-6 hover:bg-[#f2f2f2]"
                   key={index}
                 >
-                  <Link href={"/"} className="text-xl">
+                  <Link href={item?.linkTo} className="text-xl">
                     {item?.title}
                   </Link>
                   <SubMenu data={item?.subCategory} />

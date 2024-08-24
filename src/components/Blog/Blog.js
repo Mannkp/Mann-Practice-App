@@ -13,7 +13,7 @@ const Blog = ({ limit, data }) => {
               className="blogItem border-2 border-gray-500 px-10 py-4 hover:shadow-lg transition-all space-y-2 rounded-xl w-2/4 mx-auto"
               key={blog?.id}
             >
-              <Link href={""}>
+              <Link href={`/blogs/${blog?.id}`}>
                 <h3>{blog?.title}</h3>
               </Link>
               <p className="line-clamp-1">{blog?.body}</p>
